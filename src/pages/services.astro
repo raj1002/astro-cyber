@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HUD from '../components/HUD.astro';
+import Footer from '../components/Footer.astro';
+import { services } from '../content/services';
+---
+
+<Layout title="Services" description="Comprehensive digital forensics and cyber intelligence services for your most critical investigations">
+  <HUD />
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center border-b border-palantir-border/10">
+    <div class="text-center max-w-[1200px] px-8">
+      <h1 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[1.1] mb-8 tracking-tight">
+        Our Services
+      </h1>
+      <p class="text-[clamp(1rem,2vw,1.5rem)] leading-relaxed text-palantir-gray max-w-[800px] mx-auto">
+        Comprehensive digital forensics and cyber intelligence services for your most critical investigations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-32 px-8">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[2px] bg-palantir-border/10 border border-palantir-border/10">
+        {services.map((service) => (
+          <div class="bg-palantir-black p-16 hover:bg-palantir-border/5 transition-colors duration-300">
+            <h3 class="text-3xl font-bold mb-6 tracking-tight">{service.title}</h3>
+            <p class="text-lg leading-relaxed text-palantir-gray">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 px-8 border-t border-palantir-border/10 text-center">
+    <div class="max-w-[800px] mx-auto">
+      <h2 class="text-5xl font-extrabold mb-8">Need Expert Assistance?</h2>
+      <p class="text-xl text-palantir-gray mb-12">
+        Our team is available 24/7 for emergency incident response and consultations.
+      </p>
+      <a href="/contact" class="btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

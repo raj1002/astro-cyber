@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HUD from '../components/HUD.astro';
+import Footer from '../components/Footer.astro';
+import { industries } from '../content/industries';
+---
+
+<Layout title="Home">
+  <HUD />
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden border-b border-palantir-border/10">
+    <!-- Video Background -->
+    <div class="absolute inset-0 z-0">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="https://cdn.pixabay.com/video/2023/07/18/172314-846596230_large.mp4" type="video/mp4" />
+      </video>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/85 z-[1]"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 text-center max-w-[1200px] px-8 -translate-y-[5%]">
+      <h1 class="text-[clamp(2.5rem,6vw,6rem)] font-black leading-[1.1] mb-8 tracking-tight">
+        Elite Digital Forensics & Cyber Intelligence Services
+      </h1>
+      <p class="text-[clamp(1rem,2vw,1.5rem)] leading-relaxed text-gray-200 max-w-[800px] mx-auto mb-12">
+        Court-tested expertise delivering evidence with 100% admissibility. When everything depends on digital truth, trust investigators who deliver results.
+      </p>
+      <a href="/contact" class="btn-primary">Request Consultation</a>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2px] bg-palantir-border/10 border-y border-palantir-border/10">
+    <div class="bg-palantir-black py-12 px-8 text-center">
+      <div class="text-5xl font-extrabold mb-2">24/7</div>
+      <div class="text-sm text-palantir-gray uppercase tracking-wider">Emergency Response</div>
+    </div>
+    <div class="bg-palantir-black py-12 px-8 text-center">
+      <div class="text-5xl font-extrabold mb-2">15+</div>
+      <div class="text-sm text-palantir-gray uppercase tracking-wider">Years Experience</div>
+    </div>
+    <div class="bg-palantir-black py-12 px-8 text-center">
+      <div class="text-5xl font-extrabold mb-2">92%</div>
+      <div class="text-sm text-palantir-gray uppercase tracking-wider">Evidence Recovery</div>
+    </div>
+    <div class="bg-palantir-black py-12 px-8 text-center">
+      <div class="text-5xl font-extrabold mb-2">100%</div>
+      <div class="text-sm text-palantir-gray uppercase tracking-wider">Court Admissibility</div>
+    </div>
+  </section>
+
+  <!-- Expert Services Section -->
+  <section class="min-h-screen flex items-center py-32 px-8 border-t border-palantir-border/10">
+    <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+      <div>
+        <h2 class="text-[clamp(2.5rem,5vw,5rem)] font-extrabold leading-[1.1] mb-8 tracking-tight">
+          Expert Digital Forensics Services
+        </h2>
+        <p class="text-xl leading-relaxed text-palantir-gray mb-12">
+          Our certified forensic investigators deliver comprehensive digital forensics services for your most critical investigations. From incident response to expert witness testimony, we provide the expertise you need.
+        </p>
+        <a href="/services" class="section-link">Our Services →</a>
+      </div>
+      <div class="relative aspect-video overflow-hidden border border-palantir-border/10">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <source src="https://cdn.pixabay.com/video/2022/11/01/136661-765982825_large.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section id="industries" class="min-h-screen py-32 px-8 border-t border-palantir-border/10">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="mb-24">
+        <h2 class="text-[clamp(2.5rem,5vw,5rem)] font-extrabold mb-8 tracking-tight">Industries We Serve</h2>
+        <p class="text-xl text-palantir-gray max-w-[800px]">
+          We deliver specialized digital forensics expertise across multiple sectors, understanding the unique challenges and regulatory requirements of each industry.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-24">
+        {industries.map((industry) => (
+          <div class="border-b border-palantir-border/10 pb-8">
+            <div class="text-sm font-semibold text-palantir-gray uppercase tracking-widest mb-4">
+              {industry.label}
+            </div>
+            <h3 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-6 tracking-tight leading-tight">
+              {industry.title}
+            </h3>
+            <p class="text-base leading-relaxed text-palantir-gray">
+              {industry.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Large Statement -->
+  <section class="min-h-screen flex items-center py-32 px-8 border-t border-palantir-border/10">
+    <div class="max-w-[1400px] mx-auto">
+      <h2 class="text-[clamp(3rem,8vw,6rem)] font-extrabold leading-[1.1] tracking-tight">
+        When digital evidence determines the outcome, you need forensic investigators who deliver results that stand up in court.
+      </h2>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 px-8 border-t border-palantir-border/10 text-center">
+    <div class="max-w-[800px] mx-auto">
+      <h2 class="text-5xl font-extrabold mb-8">Ready to Get Started?</h2>
+      <p class="text-xl text-palantir-gray mb-12">
+        Contact our team for a confidential consultation about your investigation needs.
+      </p>
+      <a href="/contact" class="btn-primary">Request Consultation</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

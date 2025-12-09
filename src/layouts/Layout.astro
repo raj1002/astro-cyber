@@ -1,0 +1,55 @@
+---
+import '../styles/globals.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Elite Digital Forensics & Cyber Intelligence Services - Court-tested expertise delivering evidence with 100% admissibility." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Cyber Eye Intelligence</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | Cyber Eye Intelligence`} />
+    <meta property="og:description" content={description} />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <slot />
+    
+    <script>
+      // HUD fade on scroll
+      window.addEventListener('scroll', () => {
+        const hudQuadrants = document.querySelectorAll('.hud-quadrant');
+        if (window.pageYOffset > 100) {
+          hudQuadrants.forEach((q) => {
+            (q as HTMLElement).style.opacity = '0.5';
+          });
+        } else {
+          hudQuadrants.forEach((q) => {
+            (q as HTMLElement).style.opacity = '1';
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

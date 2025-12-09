@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HUD from '../components/HUD.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us" description="Elite digital forensics investigators delivering court-tested expertise">
+  <HUD />
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center border-b border-palantir-border/10">
+    <div class="text-center max-w-[1200px] px-8">
+      <h1 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[1.1] mb-8 tracking-tight">
+        About Us
+      </h1>
+      <p class="text-[clamp(1rem,2vw,1.5rem)] leading-relaxed text-palantir-gray max-w-[800px] mx-auto">
+        Elite digital forensics investigators delivering court-tested expertise for the world's most critical investigations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="min-h-screen flex items-center py-32 px-8 border-t border-palantir-border/10">
+    <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+      <div>
+        <h2 class="text-[clamp(2.5rem,5vw,5rem)] font-extrabold leading-[1.1] mb-8 tracking-tight">
+          Our Mission
+        </h2>
+        <p class="text-xl leading-relaxed text-palantir-gray mb-8">
+          To deliver uncompromising digital forensics expertise that empowers organizations to uncover truth, protect assets, and achieve justice in an increasingly complex digital landscape.
+        </p>
+        <p class="text-xl leading-relaxed text-palantir-gray">
+          We combine cutting-edge technology with human expertise to provide investigative services that stand up to the highest legal and technical scrutiny.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="border border-palantir-border/10 p-8">
+          <div class="text-5xl font-extrabold mb-4">15+</div>
+          <div class="text-base text-palantir-gray">Years Experience</div>
+        </div>
+        <div class="border border-palantir-border/10 p-8">
+          <div class="text-5xl font-extrabold mb-4">500+</div>
+          <div class="text-base text-palantir-gray">Cases Completed</div>
+        </div>
+        <div class="border border-palantir-border/10 p-8">
+          <div class="text-5xl font-extrabold mb-4">100%</div>
+          <div class="text-base text-palantir-gray">Court Admissibility</div>
+        </div>
+        <div class="border border-palantir-border/10 p-8">
+          <div class="text-5xl font-extrabold mb-4">24/7</div>
+          <div class="text-base text-palantir-gray">Incident Response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="min-h-screen flex items-center py-32 px-8 border-t border-palantir-border/10">
+    <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32">
+      <div>
+        <h2 class="text-[clamp(2.5rem,5vw,5rem)] font-extrabold leading-[1.1] tracking-tight">
+          Our Values
+        </h2>
+      </div>
+      <div class="space-y-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Integrity</h3>
+          <p class="text-lg leading-relaxed text-palantir-gray">
+            We maintain the highest ethical standards in every investigation, ensuring unbiased analysis and unbreakable chain of custody.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Excellence</h3>
+          <p class="text-lg leading-relaxed text-palantir-gray">
+            Our team holds the industry's most respected certifications and continuously advances their expertise in emerging technologies.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Responsiveness</h3>
+          <p class="text-lg leading-relaxed text-palantir-gray">
+            When digital evidence is at stake, time is critical. Our 24/7 incident response team is always ready to deploy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-32 px-8 border-t border-palantir-border/10">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="mb-24">
+        <h2 class="text-[clamp(2.5rem,5vw,5rem)] font-extrabold mb-8 tracking-tight">Expert Team</h2>
+        <p class="text-xl text-palantir-gray max-w-[800px]">
+          Our investigators combine decades of experience in law enforcement, cybersecurity, and digital forensics to deliver results that stand up in court.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        {[
+          { role: 'Lead Investigator', dept: 'Digital Forensics', desc: '15+ years conducting complex digital investigations. Certified in EnCE, GCFE, and CCFP with expertise in multi-jurisdictional cases.' },
+          { role: 'Senior Analyst', dept: 'Incident Response', desc: 'Former federal cybersecurity specialist with expertise in APT investigations and network forensics. CISSP and GCIA certified.' },
+          { role: 'Forensics Expert', dept: 'Mobile & Cloud', desc: 'Specialist in iOS, Android, and cloud platform forensics. 10+ years experience in data recovery and analysis. CCME and GREM certified.' },
+          { role: 'Legal Advisor', dept: 'Expert Witness', desc: 'Experienced expert witness with testimony in 100+ civil and criminal cases. Former prosecutor with deep understanding of evidence requirements.' },
+          { role: 'Technical Director', dept: 'Malware Analysis', desc: 'Reverse engineering specialist with expertise in advanced persistent threats and zero-day exploits. GREM and GCIH certified.' },
+          { role: 'Intelligence Analyst', dept: 'Cyber Threat Intel', desc: 'Former intelligence community analyst specializing in threat actor attribution and dark web investigations. GIAC GOSI certified.' },
+        ].map((member) => (
+          <div class="border border-palantir-border/10 p-8">
+            <h3 class="text-2xl font-bold mb-2">{member.role}</h3>
+            <div class="text-sm text-palantir-gray uppercase tracking-widest mb-4">{member.dept}</div>
+            <p class="text-base leading-relaxed text-palantir-gray">{member.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-32 px-8 border-t border-palantir-border/10">
+    <div class="max-w-[1400px] mx-auto">
+      <h2 class="text-[clamp(2.5rem,5vw,5rem)] font-extrabold mb-16 tracking-tight">Certifications & Partnerships</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {[
+          { name: 'EnCE', full: 'EnCase Certified Examiner' },
+          { name: 'GCFE', full: 'GIAC Certified Forensic Examiner' },
+          { name: 'CCFP', full: 'Certified Cyber Forensics Professional' },
+          { name: 'CISSP', full: 'Information Systems Security Professional' },
+          { name: 'GREM', full: 'Reverse Engineering Malware' },
+          { name: 'CCME', full: 'Cellebrite Certified Mobile Examiner' },
+          { name: 'GCIA', full: 'Intrusion Analyst' },
+          { name: 'GCIH', full: 'Incident Handler' },
+        ].map((cert) => (
+          <div class="border border-palantir-border/10 p-8 text-center">
+            <h4 class="text-xl font-bold mb-2">{cert.name}</h4>
+            <p class="text-sm text-palantir-gray">{cert.full}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

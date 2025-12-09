@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Palantir Colors */
+  --color-palantir-black: #000000;
+  --color-palantir-white: #ffffff;
+  --color-palantir-gray: #808080;
+  --color-palantir-border: rgba(255, 255, 255, 0.1);
+  
+  /* Font Family */
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Custom Animations */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  * {
+    @apply border-palantir-border/10;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-palantir-black text-palantir-white font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  
+  a {
+    @apply transition-opacity duration-300;
+  }
+  
+  a:hover {
+    @apply opacity-70;
+  }
+}
+
+@layer components {
+  /* HUD Navigation */
+  .hud-nav {
+    @apply fixed inset-0 pointer-events-none z-50;
+  }
+  
+  .hud-quadrant {
+    @apply absolute bg-black/95 backdrop-blur-xl border border-palantir-border/10 pointer-events-auto p-8 transition-opacity duration-300;
+  }
+  
+  .hud-top-left {
+    @apply top-8 left-8;
+  }
+  
+  .hud-top-right {
+    @apply top-8 right-8;
+  }
+  
+  .hud-bottom-right {
+    @apply bottom-8 right-8;
+  }
+  
+  .logo {
+    @apply text-sm font-bold tracking-wider;
+  }
+  
+  .nav-menu {
+    @apply flex gap-8 list-none;
+  }
+  
+  .nav-menu a {
+    @apply text-sm font-medium text-palantir-white no-underline;
+  }
+  
+  .hud-cta {
+    @apply inline-block px-8 py-4 border border-palantir-white text-palantir-white no-underline text-sm font-semibold uppercase tracking-wider transition-all duration-300;
+  }
+  
+  .hud-cta:hover {
+    @apply bg-palantir-white text-palantir-black opacity-100;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply inline-block px-12 py-5 bg-transparent border-2 border-white text-white no-underline text-base font-bold uppercase tracking-widest transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-white text-black opacity-100;
+  }
+  
+  /* Section Link */
+  .section-link {
+    @apply text-palantir-white no-underline text-base font-semibold border-b-2 border-palantir-white pb-2 inline-block;
+  }
+  
+  /* Video Container */
+  .video-container {
+    @apply relative w-full h-full overflow-hidden;
+  }
+  
+  .video-container video {
+    @apply w-full h-full object-cover;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-palantir-black);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-palantir-gray);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-palantir-white);
+  }
+}
+
+/* Mobile Menu Hide HUD */
+@media (max-width: 768px) {
+  .hud-nav {
+    @apply hidden;
+  }
+}
